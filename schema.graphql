@@ -1,0 +1,26 @@
+type Project {
+  id: ID!
+  name: String!
+  text: String!
+  done: Boolean!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  Projects: [Project!]!
+}
+
+input NewProject {
+  name: String!
+  text: String!
+  userId: String!
+}
+
+type Mutation {
+  createProject(input: NewProject!): Project!
+}
